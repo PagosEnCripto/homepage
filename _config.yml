@@ -2,7 +2,7 @@
 title: Nimiq Community
 email: community@nimiq.com
 description: "A compendium of community Nimiq-related content"
-baseurl: "/homepage/" # the subpath of your site, e.g. /blog/
+baseurl: "/homepage" # the subpath of your site, e.g. /blog/
 url: "https://pagosencripto.github.io/"
 twitter_username: nimiq
 github_username:  nimiq
