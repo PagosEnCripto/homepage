@@ -1,311 +1,150 @@
 ---
 layout: default
-section_id: home
-slides:
-  - bg: images/banner/bitladon.jpg
-    title: Bitcoin Meester listed NIM/ETH and NIM/LA
-    tagline: New Exchange
-  - bg: images/banner/latvia.jpg
-    title: Nimiq Around the World
-    tagline: Highest public viewpoint in Riga, Latvia.
-  - bg: images/banner/meetup.jpg
-    title: Meet Us
-    tagline: Join or organize a Nimiq meetup
-innovations:
-  - image: images/innovation/discord.jpg
-    title: Social Channels
-    desc: Get in touch with project leads and other community members.
-    class: graphic-design
-    url: https://nimiq.community/social.html
-  - image: images/innovation/ledger.jpg
-    title: Ledger Support
-    desc: Use NIM with your Ledger Nano.
-    class: web-design print
-    url: https://nimiq.github.io/
-  - image: images/innovation/mining.jpg
-    title: Start Mining
-    desc: Find information about the different mining pools and how to start mining.
-    class: brand
-    url: https://nimiq.community/mining.html
-  - image: images/innovation/github.jpg
-    title: 100% Open-Source
-    desc: Start your own project or contribute with an existing one.
-    class: development
-    url: https://github.com/nimiq-network
-projects:
+section_id: projects
+works:
+  - image: images/projects/nimiqwatch.jpg
+    title: Nimiq Watch
+    link_to: https://nimiq.watch/
+    class: eat
+    desc: Blockchain Exporer by @Soeren
   - image: images/projects/mopsus.jpg
     title: Nimiq Mopsus
-    desc: Block Explorer
-    class: graphic-design
-    url: https://nimiq.mopsus.com/
-  - image: images/projects/nimnow.jpg
-    title: NimNow
-    desc: Site that rewards NIM to users for completing surveys.
-    class: web-design print
-    url: http://www.nimnow.com
+    link_to: https://nimiq.mopsus.com/
+    class: shop
+    desc: Blockchain Explorer by KenBlazer
   - image: images/projects/poolwatch.jpg
-    title: Pool Watch
-    desc: Collects and displays pool stats
-    class: brand
-    url: https://poolwatch.info/#
-  - image: images/projects/nimex.jpg
-    title: Decentralized Exchange
-    desc: NIM/ETH Decentralized Exchange.
-    class: development
-    url: https://www.nimex.app/
-  - image: images/projects/nimiqgames.jpg
-    title: Nimiq Games
-    desc: Browser multiplayer games on top of Nimiq.
-    class: development
-    url: http://www.nimiqgames.ca/
-  - image: images/projects/nimiqfunder.jpg
-    title: Nimiq Funder
-    desc: Addon to fund websites with Nimiq.
-    class: development
-    url: https://github.com/rlafranchi/nimiq-funder
-  - image: images/projects/coinmiq.jpg
-    title: Coinmiq WebMiner
-    desc: JavaScript miner that can be easily embedded in your website.
-    class: development
-    url: http://coinmiq.com/
-  - image: images/projects/nimiqx.jpg
-    title: NimiqX API
-    desc: Build Nimiq applications easily with our web APIs. High throughputs, linear scaling, low-latency. Over 99.99% uptime with no single point of failure.
-    class: development
-    url: https://api.nimiqx.com/
+    title: PoolWatch
+    link_to: https://poolwatch.info/
+    class: experience
+    desc: Nimiq pool stats site.
+  - image: images/projects/nologo.jpg
+    title: Nimiq Desktop Miner
+    link_to: https://nimiqdesktop.com
+    class: shop
+    desc: Easy to use Desktop wallet/miner translated in several languages.
 
-mains:
-  - icon_class: fa fa-graduation-cap
-    title: Education
-    desc: Discover the Nimiq project and ecosystem by enrolling in the Academy and increasing your crypto-skills.
-  - icon_class: fa fa-users
-    title: Collaboration
-    desc: Discover the community-led projects already being developed.
-  - icon_class: fa fa-flask
-    title: Innovation
-    desc: Engage with the Nimiq community; join hackathons, create your own projects and much more.
-
-exchanges:
-  - img: images/exchanges/tradesatoshi.jpg
-    url: https://tradesatoshi.com/Exchange/?market=NIM_BTC
-  - img: images/exchanges/nimex.jpg
-    url: https://www.nimex.app/
-  - img: images/exchanges/agora.jpg
-    url: https://agora.trade/
-  - img: images/exchanges/latokenlogo.jpg
-    url: https://bit.ly/2IyYY8s
-  - img: images/exchanges/btcalpha.jpg
-    url: https://btc-alpha.com/coin/NIM/
-  - img: images/exchanges/hitbtc.jpg
-    url: https://hitbtc.com/NIM-to-BTC
-  - img: images/exchanges/changelly.jpg
-    url: https://changelly.com/exchange/btc/nim?ref_id=v06xmpbqj5lpftuj
-  - img: images/exchanges/changehero.jpg
-    url: https://changehero.io/
-  - img: images/exchanges/changenow.jpg
-    url: https://changenow.io/
-  - img: images/exchanges/stealthex.jpg
-    url: https://stealthex.io/
-  - img: images/exchanges/bisq.jpg
-    url: https://bisq.network/
 ---
-<script>
-window.onload = function(){
-var output = "";
-jQuery.get('https://api.nimiqx.com/price/?api_key=5120bd49e4dd0b4d86aeddbcb3ad709a', function(result){
-        var color1h = "21BCA5";
-        var color24h = "21BCA5";
-        if (result["percent_change_1h"]["btc"] < 0){color1h="#D94432";}
-        if (result["percent_change_24h"]["btc"] < 0){color24h="D94432";}
-        jQuery.get('https://api.nimiqx.com/supply/?api_key=5120bd49e4dd0b4d86aeddbcb3ad709a', function(result2){
-        console.log(result["circulating_supply"]);
-        output = "<strong>Price</strong> $" + result["usd"] + " / " + result["btc"] + " BTC &emsp; | &emsp; <strong>%Change (BTC) <span style='color:"+ color1h+ "'>" +  result["percent_change_1h"]["btc"] + "% 1h</span></strong> / <strong><span style='color:" + color24h + "'>" + result["percent_change_24h"]["btc"] + "% 24h</span></strong> &emsp; | &emsp; <strong>Circulating Supply</strong> " + result2["circulating_supply"].toFixed(1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " NIM ";
-        document.getElementById("price").innerHTML = output;
-        })
-        })
-}
-</script>
-
-
-<section>
-<div class='full no-padding'>
-  <div class='spacing'></div>
-  <div class='row'>
-    <div class='large-12 columns'>
-	    <p id='price' style="color:black; font-size:1.2rem;"><strong></strong> <p>
-      <div class='mod modBoxedSlider'>
-        <div class='slides'>
-          {% for slide in page.slides %}
-            <div class='slide'>
-              <img alt="" src="{{slide.bg}}" />
-              <div class='caption'>
-                <p>{{slide.title}}</p>
-                <h2>{{slide.tagline}}</h2>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class='full no-padding'>
-  <div class='row'>
-    <div class='large-12 columns'>
-      <p style='font-size: 2.8rem; color: #1F2348;'>
-       Nimiq's Community elevator pitch is being discussed <b><a href="https://nimiq.com">HERE</a></b>.</p>
-      </p>
-      <div class='spacing'></div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<section class="intro" id="intro">
-  <div class="introspace"></div>
-  <div class="row">
-    {% for main in page.mains %}
-      <div class='medium-4 large-4 columns'>
-        <div class='fadein mod modIconText' data-delay='{{ 200 | times:forloop.index0 }}'>
-          <div class='icon-text-circle-white'>
-      <a href="#{{main.title}}">
-      <i class='{{main.icon_class}}'></i>
-            <h3 class'icon-text-circle-white' style="color: #C0C0C0; font-size: 3.5rem">{{main.title}}</h3>
-      </a>
-      <p style='font-size: 2.5rem;color:#C0C0C0'>{{main.desc}}</p>
-      </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-  </div>
-</section>
-
-
-<section>
-  <div class='two spacing'></div>
+<section style='background: #0e6f8f;'>
+  <div class='four spacing'></div>
+  <div class='four spacing'></div>
+  <div class='four spacing'></div>
+  <div class='four spacing'></div>
   <div class='row'>
     <div class='large-12 columns'>
     <a name="Education"></a>
-      <h2  name="education">
-        Education
-        /
-        <a href='/academy' name="Education">Join the Academy</a>
+      <h2  name="education" style='color: white; font-size: 4rem; text-align: center;'>Comience a hacer<br>
+        
+        <a href='/academy' name="titulo" style='color: white;'>Pagos En Cripto</a>
       </h2>
-      <p style='font-size: 2rem;' >The Nimiq platform is fundamentally designed for ease of use and mass adoption. Enroll in the Nimiq Academy to learn all about the project, its potential use cases, and how both the team and community are using Nimiq to bring blockchain to the masses.</p>
-      <div class='spacing'></div>
+      <div class='single spacing'></div>
+      <p style='color: white; font-size: 4rem; text-align: center' >Conozca donde usar sus criptomonedas<br>y como empezar a aceptarlas en su negocio.<br>¡Unase al nuevo mundo de las criptopmonedas!</p>
     </div>
+    </div>
+      <div class='two spacing'></div>
+<div>
+                    <p style ='color: #C0C0C0; font-size: 3rem; text-align: center;'>¿QUE SON LAS CRIPTOMONEDAS?</p>
+    </div>
+
+    <div>
+	    <p style ='color: #C0C0C0; font-size: 3rem; text-align: center;'>Las criptomonedas son una nueva forma de dinero.<br>Al ser decentralizada e independiente, cualquiera puede participar.<br>Por eso cripto es considerado el dinero del futuro.</p>
+	    </div>
+
+  <div class='four spacing'></div>
   </div>
+  </section>
+
+  <div class='four spacing'></div>
+  <section style='background: #f3f3f3;'>
+	<div>
+            <p style ='color: #1f2348; font-size: 6rem; text-align: center;'>¡Pague con Bitcoin o NIM!</p>
+    </div>
+
+    <div>
+	    <p style ='color: #808080; font-size: 3rem; text-align: center;'>Salga a comer o de compras,<br>con Criptomonedas en Costa Rica.</p>
+    </div>
 
 
-<div class='two spacing'></div>
-<div class='row'>
-  <div class='large-12 columns'>
-    <h3>Courses</h3>
-    <div class='spacing'></div>
-    <div class='mod modTestimonials simple'>
-      <div class='row'>
-        <div class='small-12 columns'>
-          <div class='items'>
-            {% for t in site.posts  %}
-	    {% if t.type=="course"%}
-              <div class='item'>
-                <div class='author'>
-		  <a href="{{t.url}}"><img alt="" src="{{t.courseimg}}" /></a>
-		  <p class='author-name'>
-                    <strong>
-                      {{t.title}}
-                    </strong><br />
-		    {{t.excerpt | truncatewords: 30}}
-		  </p><br />
+  <div class='four spacing'></div>
+  <div class='row'>
+    <div class='mod modGallery'>
+      <div class='gallery-nav'>
+        <ul>
+          <li class='current'>
+            <a data-cat='all' href='#'>All</a>
+          </li>
+	  <li>
+            <a data-cat='eat' href='#'>Eat</a>
+          </li>
+	  <li>
+            <a data-cat='sleep' href='#'>Sleep</a>
+          </li>
+          <li>
+            <a data-cat='experience' href='#'>Experience</a>
+          </li>
+          <li>
+            <a data-cat='shop' href='#'>Shop</a>
+          </li>
+        </ul>
+      </div>
+      <ul class='gallery large-block-grid-4 medium-block-grid-3 seperated small-block-grid-2'>
+        {% for work in page.works %}
+          <li class='{{work.class}}'>
+            <a href='{{work.link_to}}'>
+              <img alt="" src="{{site.url}}/{{work.image}}" />
+              <div class='overlay' style='background: rgba(143, 221, 115, 0.8);'>
+                <div class='thumb-info'>
+                  <h3>{{work.title}}</h3>
+                  <p>{{work.desc}}</p>
                 </div>
-		<p class='quote'>{{t.text}}</p>
-	      </div>
-		          {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<hr>
-<div class='row'>
-  <div class='large-12 columns'>
-	<a name="Collaboration"></a>
-    <h2>
-      Collaboration
-      /
-      <a href='projects.html' name="Collaboration">Discover the Nimiq Ecosystem</a>
-    </h2>
-    <p style='font-size: 2rem;'>Community engagement and positive collaboration are central to the Nimiq philosophy. The community has already developed projects ranging from block explorers and mining pools to decentralised exchanges and games, here are a few highlights:</p>
-    <div class='spacing'></div>
-  </div>
-  <div class='mod modGallery'>
-    <ul class='gallery large-block-grid-4 medium-block-grid-3 seperated small-block-grid-2'>
-      {% for project in page.projects %}
-        <li class='{{project.class}}'>
-	<a href="{{project.url}}">
-            <img alt="" src="{{project.image}}" />
-            <div class='overlay' style='background: rgba(31, 35, 72, 0.8);'>
-              <div class='thumb-info'>
-		<h3><b>{{project.title}}</b></h3>
-		<p><b>{{project.desc}}</b></p>
               </div>
-            </div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-<div class='two spacing'></div>
-<hr>
-<div class='two spacing'></div>
-<div class='row'>
-  <div class='large-12 columns'>
-	<a name="Innovation"></a>
-    <h2>
-      Innovation
-      /
-      <a href='official-projects.html'>Get Involved!</a>
-    </h3>
-    <p style='font-size: 2rem;'>Whether it's joining a mining pool, taking part in a hackathon or launching your own project using Nimiq, the community would be pleased to welcome you. Nimiq has strong links with a number of educational institutions and its own Ledger Nano S app, so get involved and help us grow the ecosystem!</p>
-    <div class='spacing'></div>
-  </div>
-  <div class='mod modGallery'>
-    <ul class='gallery large-block-grid-4 medium-block-grid-3 seperated small-block-grid-2'>
-      {% for entry in page.innovations %}
-        <li class='{{entry.class}}'>
-	<a href="{{entry.url}}">
-            <img alt="" src="{{entry.image}}" />
-            <div class='overlay' style='background: rgba(31, 35, 72, 0.8);'>
-              <div class='thumb-info'>
-		<h3><b>{{entry.title}}</b></h3>
-		<p><b>{{entry.desc}}</b></p>
-              </div>
-            </div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-<div class='row'>
-  <div class='large-12 columns'>
-    <h2>Exchanges</h2>
-    <div class='mod modClients' data-slides_to_show='5'>
-      <div class='clients'>
-        {% for ex in page.exchanges %}
-	<div><a href="{{ex.url}}"><img alt="" src="{{ex.img}}" /></a></div>
+	      	  <div class='two spacing'></div>
+	
+                  <h3 style='color: #1f2348; font-size: 3rem; text-align: center'>{{work.title}}</h3>
+                  <pstyle='color: #1f2348; font-size: 3rem; text-align: center'>{{work.desc}}</p>
+            </a>
+          </li>
         {% endfor %}
-      </div>
+      </ul>
     </div>
   </div>
+  <div class='four spacing'></div>
 </div>
-</div>
-  <div class='full no-padding'>
-</div>
-
 </section>
+
+<section style='background: #ffffff;'>
+  <div class='four spacing'></div>
+    <div>
+            <p style ='color: #1f2348; font-size: 6rem; text-align: center;'>Cripto para Humanos</p>
+    </div>
+
+    <div>
+            <p style ='color: #808080; font-size: 3rem; text-align: center;'>Nimiq es una criptomonedas diseñada para ser usada por todos los Humanos<br>sin importar su conocimiento tecnológico o riqueza.</p>
+	    <p style ='color: #808080; font-size: 3rem; text-align: center;'>Es decentralizada, lo cual quiere decir que es controlada por todos los participantes,<br>y no tiene por una sola persona u organizacion.</p>
+            <p style ='color: #808080; font-size: 3rem; text-align: center;'>Crear una billetera es gratis y solo toma unos segundos.</p>
+	    <p style ='color: #808080; font-size: 3rem; text-align: center;'>2% de todos los NIM se dedican a caridad y obra benefica. <br>Con la proxima mejora a version 2.0, NIM va a requerir muy poca energia.</p>
+  <div class='two spacing'></div>
+<h2  name="education" style='font-size: 4rem; text-align: center;'>
+	    <a href='/academy' name="titulo">Aprenda mas acerca de Nimiq</a>
+</h2>
+
+  <div class='four spacing'></div>
+    </div>
+</section>
+
+<section style='background: #f3f3f3;'>
+  <div class='four spacing'></div>
+    <div>
+            <p style ='color: #1f2348; font-size: 6rem; text-align: center;'>Esta interesado en aceptar cripto en su negocio?</p>
+    </div>
+
+    <div>
+            <p style ='color: #808080; font-size: 3rem; text-align: center;'>Es mucho mas facil de lo que usted se imagina.,<br>no hay un intermediario y es gratis!</p>
+  <div class='two spacing'></div>
+<h2  name="education" style='font-size: 3rem; text-align: center;'>
+            <a href='/academy' name="titulo">Contactenos para mas informacion.</a>
+</h2>
+
+  <div class='four spacing'></div>
+    </div>
+</section>
+
